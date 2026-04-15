@@ -3,69 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículo profissional de Leonardo Cassiano B. Pereira, estudante de ADS e desenvolvedor em formação.">
   <title>Currículo Leonardo C.</title>
   <link rel="stylesheet" href="styles/index.css">
 </head>
-<body id="body-page2">
+<body id="body-page2" class="curriculo-page">
   <main id="main">
-    
-    <header>
+    <header class="hero-header">
       <h1>Currículo Profissional</h1>
       <h2>Leonardo Cassiano B. Pereira</h2>
     </header>
+
     <article id="profile-page2">
-      
-      <img src="assets/avatar.png" alt="">
+      <img src="assets/avatar.png" alt="Foto de perfil de Leonardo Cassiano B. Pereira">
+
       <section class="secondPage">
-        <div class="bgColorAlternate">
+        <div class="bgColorAlternate resume-card">
           <h2>Resumo pessoal</h2>
-          <p id="mySummary">
-            Me chamo Leonardo, tenho 19 anos,sou natural de Florianópolis, Santa Catarina.
-            Sou um entusiasta da tecnologia, desde pequeno sempre tive paixão por tecnologia, video games e computadores de antigamente,e com isso decidi entrar pra área de tecnologia,especificamente na área de desenvolvedor. Atualmente estou iniciando minha jornada no desenvolvimento web. Tenho conhecimento avançado em HTML e CSS. Estou iniciando meu conhecimento avançado em JAVASCRIPT. Estou constantemente aprimorando minhas habilidades para me tornar um profissional completo na área.
+          <div class="quick-facts" aria-label="Resumo rápido">
+            <span>20 anos</span>
+            <span>Florianópolis - SC</span>
+            <span>ADS em formação</span>
+            <span>Back-end e Dados</span>
+          </div>
+
+          <p id="mySummary" class="lead">
+            Olá! Me chamo Leonardo, tenho 20 anos e sou natural de Florianópolis, Santa Catarina. Minha paixão por tecnologia vem desde cedo e hoje meu foco está em <span class="text-highlight">back-end</span>, <span class="text-highlight">dados</span> e evolução para atuar também com <span class="text-highlight">nuvem</span>.
           </p>
+
+          <ul class="summary-highlights" aria-label="Principais focos">
+            <li>Base em <strong>HTML5, CSS3 e JavaScript</strong> (lógica e fundamentos)</li>
+            <li>Foco atual em <strong>Java para back-end</strong> e construção de sistemas</li>
+            <li>Interesse crescente em <strong>dados</strong> e estruturação de informação</li>
+            <li>Estudos em <strong>Cibersegurança, redes</strong> e trilha futura em <strong>cloud</strong></li>
+          </ul>
+
+          <p>Já tive contato com a linguagem C, onde explorei os conceitos iniciais de lógica e estrutura. Meu objetivo é evoluir constantemente como desenvolvedor, unindo aprendizado acadêmico e prática para atuar em tecnologias que movem o mercado.</p>
         </div>
-        <div class="bgColorAlternate">
-          <h2>
-            CERTIFICADOS:
-          </h2>
+
+        <div class="bgColorAlternate cert-card">
+          <h2>Certificados</h2>
           <ul>
-            <li>DISCOVER - ROCKETSEAT </li>
-            <li>Fundamentos HTML e CSS - Rocketseat</li>
-            <li>Diversas imersões da Rocketseat e Alura de IA.</li>
-            <li>Trilha Fullstack Rocketseat ( Em andamento)</li>
-            <li>Javascript e ECMAScript Curso em Vídeo ( Em andamento )</li>
+            <li class="cert-item">
+              <span class="cert-title">Discover</span>
+              <span class="cert-provider">Rocketseat</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">Fundamentos HTML e CSS</span>
+              <span class="cert-provider">Rocketseat</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">Imersões de IA</span>
+              <span class="cert-provider">Rocketseat e Alura</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">Trilha Fullstack</span>
+              <span class="cert-provider">Rocketseat</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">JavaScript e ECMAScript</span>
+              <span class="cert-provider">Curso em Vídeo</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">Introdução à Cibersegurança</span>
+              <span class="cert-provider">Cisco</span>
+              <span class="cert-status concluido">Concluído</span>
+            </li>
+            <li class="cert-item">
+              <span class="cert-title">Java</span>
+              <span class="cert-provider">Curso em andamento</span>
+              <span class="cert-status andamento">Em andamento</span>
+            </li>
           </ul>
         </div>
       </section>
-      <h2>Contact</h2>
-      
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/leonardo-bruchez-280635356/">Linkedin</a>
-        </li>
-        <li>
-          <a href="mailto:Bruchezleonardo@gmail.com">E-mail</a>
-        </li>
 
+      <section class="contact-card" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contato</h2>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/leonardo-bruchez-280635356/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:bruchezleonardo@gmail.com">E-mail</a>
+          </li>
+        </ul>
+      </section>
     </article>
-    <div id="switch" onclick="toggleMode()">
-      <button></button>
-      <span></span>
+
+    <div id="switch">
+      <button type="button" onclick="toggleMode()" aria-label="Alternar tema claro e escuro"></button>
+      <span aria-hidden="true"></span>
     </div>
-  <aside>
-    <a href="assets/Curriculo-Leonardo-Cassiano.pdf" download="Curriculo-Leonardo-Cassiano.pdf"> Baixar curriculo</a>
+
+    <aside class="actions-panel">
+      <a class="primary-action" href="assets/Leonardo Cassiano Bruchez Pereira (1).pdf" download="Curriculo-Leonardo-Cassiano.pdf">Baixar currículo</a>
       <div id="button-backpage">
         <ul>
           <li>
-            <a href="index.html" >Voltar página</a>
+            <a class="secondary-action" href="index.html">Voltar página</a>
           </li>
         </ul>
-  </aside>
-    </div>
+      </div>
+    </aside>
   </main>
+
   <footer>
     Feito por <a href="https://github.com/LeonardoBruchez">Leonardo Bruchez</a>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
