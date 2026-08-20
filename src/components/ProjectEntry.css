@@ -1,0 +1,73 @@
+.project-entry {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.project-entry:last-child {
+  padding-bottom: 0;
+}
+
+.project-entry-index {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding-top: 0.2rem;
+}
+
+.project-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.project-entry-head h3 {
+  font-size: 1.3rem;
+}
+
+.project-entry-body p {
+  color: var(--ink);
+  max-width: 38rem;
+}
+
+.project-entry-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  list-style: none;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.project-entry-stack li {
+  position: relative;
+}
+
+.project-entry-stack li:not(:last-child)::after {
+  content: '·';
+  margin-left: var(--space-2);
+  color: var(--rule);
+}
+
+.project-entry-link {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.project-entry-link a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-entry-link span {
+  color: var(--ink-soft);
+  font-style: italic;
+}
