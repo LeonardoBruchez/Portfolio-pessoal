@@ -2,18 +2,25 @@
   display: grid;
   grid-template-columns: 2.5rem 1fr;
   gap: var(--space-2);
-  padding: var(--space-3) 0;
+  padding: var(--space-3) var(--space-2);
+  margin: 0 calc(var(--space-2) * -1);
   border-top: 1px solid var(--rule);
+  border-radius: 4px;
+  transition: background 0.25s ease;
 }
 
 .project-entry:last-child {
-  padding-bottom: 0;
+  padding-bottom: var(--space-3);
+}
+
+.project-entry:hover {
+  background: var(--paper-raised);
 }
 
 .project-entry-index {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--ink-soft);
+  color: var(--accent);
   padding-top: 0.2rem;
 }
 
@@ -34,6 +41,10 @@
   max-width: 38rem;
 }
 
+.project-entry-body p + p {
+  margin-top: var(--space-2);
+}
+
 .project-entry-stack {
   display: flex;
   flex-wrap: wrap;
@@ -42,11 +53,11 @@
   margin-top: var(--space-2);
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--ink-soft);
 }
 
 .project-entry-stack li {
   position: relative;
+  color: var(--accent);
 }
 
 .project-entry-stack li:not(:last-child)::after {
@@ -62,9 +73,16 @@
 }
 
 .project-entry-link a {
-  color: var(--accent);
+  color: var(--ink-soft);
   text-decoration: underline;
+  text-decoration-color: var(--rule);
   text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.project-entry-link a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
 
 .project-entry-link span {

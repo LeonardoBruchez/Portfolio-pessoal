@@ -5,7 +5,37 @@
 
 .resume-page h1 {
   font-size: clamp(1.9rem, 5vw, 2.4rem);
+  margin: 0;
+}
+
+.resume-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
   margin: var(--space-1) 0 var(--space-3);
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.resume-download-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
 }
 
 .resume-intro {
@@ -27,6 +57,10 @@
 
 .resume-grid h2 + * {
   margin-top: 0;
+}
+
+.resume-grid p + p {
+  margin-top: var(--space-2);
 }
 
 .resume-grid > div > h2:not(:first-child) {
@@ -78,6 +112,10 @@
   white-space: nowrap;
 }
 
+.course-status-active {
+  color: var(--accent-2);
+}
+
 @media (max-width: 700px) {
   .resume-grid {
     grid-template-columns: 1fr;
@@ -88,16 +126,10 @@
     flex-direction: column;
     gap: 0.15rem;
   }
+
+  .resume-download-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-.resume-download {
-  margin-top: var(--space-4);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-
-.resume-download a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}

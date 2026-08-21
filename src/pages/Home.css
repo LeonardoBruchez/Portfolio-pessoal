@@ -5,41 +5,98 @@
 
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 3.4rem);
-  margin: var(--space-1) 0 var(--space-3);
+  margin: var(--space-1) 0 var(--space-2);
 }
 
-.hero-body {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--space-4);
-  align-items: start;
+.hero-tagline {
+  max-width: 32rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
 }
 
-.hero-text p {
-  max-width: 34rem;
+.hero-tagline a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.hero-text p + p {
-  margin-top: var(--space-2);
+.hero-tagline a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.hero-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
 }
 
 .hero-photo {
-  width: 9rem;
-  height: 9rem;
+  width: 6.5rem;
+  height: 6.5rem;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.hero-snippet {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hero-snippet .tok-kw {
+  color: var(--accent-2);
+}
+
+.hero-snippet .tok-var {
+  color: var(--ink);
+}
+
+.hero-snippet .tok-str {
+  color: var(--accent);
+}
+
+.cursor-blink {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+  }
 }
 
 @media (max-width: 640px) {
-  .hero-body {
-    grid-template-columns: 1fr;
+  .hero-panel {
+    flex-direction: column;
   }
 
   .hero-photo {
-    grid-row: auto;
-    order: -1;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .hero-snippet {
+    width: 100%;
   }
 }
 
@@ -59,7 +116,14 @@
 }
 
 .see-all a {
-  color: var(--accent);
+  color: var(--ink-soft);
   text-decoration: underline;
+  text-decoration-color: var(--rule);
   text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.see-all a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }

@@ -45,8 +45,9 @@ EUA) desenhou priorizando legibilidade — parecia mais sensato pra um site que 
 ser lido rápido por recrutador do que escolher algo só pela estética.
 
 **Dados de projeto num arquivo só (`src/data/projects.ts`).** Cada projeto é um objeto
-tipado com `summary` (usado na home) e `detail` (usado na página de projetos), em vez de
-duplicar o texto nas duas páginas ou criar um CMS pra três itens.
+tipado com `summary` (uma linha, usada na home) e `detail` (lista de parágrafos, usada na
+página de projetos), em vez de duplicar o texto nas duas páginas ou criar um CMS pra três
+itens.
 
 ## O que aprendi construindo isso
 

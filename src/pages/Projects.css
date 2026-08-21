@@ -24,7 +24,14 @@
 }
 
 .projects-page .see-all a {
-  color: var(--accent);
+  color: var(--ink-soft);
   text-decoration: underline;
+  text-decoration-color: var(--rule);
   text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.projects-page .see-all a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }

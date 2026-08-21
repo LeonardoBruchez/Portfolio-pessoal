@@ -30,6 +30,11 @@
   font-weight: 600;
   text-decoration: none;
   color: var(--ink);
+  transition: color 0.15s ease;
+}
+
+.site-header .wordmark:hover {
+  color: var(--accent);
 }
 
 .site-nav {
@@ -40,6 +45,10 @@
   font-size: 0.85rem;
 }
 
+.site-nav-item {
+  position: relative;
+}
+
 .site-nav a {
   text-decoration: none;
   color: var(--ink-soft);
@@ -48,10 +57,23 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.site-nav a:hover,
-.site-nav a.active {
+.site-nav a:hover {
   color: var(--ink);
   border-bottom-color: var(--accent);
+}
+
+.site-nav a.active {
+  color: var(--ink);
+}
+
+.site-nav-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 6px 0 rgba(255, 180, 84, 0.6);
 }
 
 main {

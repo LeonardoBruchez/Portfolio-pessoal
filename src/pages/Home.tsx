@@ -1,34 +1,66 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { projects } from '../data/projects';
 import { ProjectEntry } from '../components/ProjectEntry';
 import './Home.css';
 
 export function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, 36]);
+
   return (
     <>
-      <section className="hero shell">
+      <section className="hero shell" ref={heroRef}>
         <span className="eyebrow">ADS · 2º semestre · Estácio SC</span>
         <h1>Leonardo Bruchez</h1>
-        <div className="hero-body">
-          <div className="hero-text">
-            <p>
-              Estudante de Análise e Desenvolvimento de Sistemas, no começo da faculdade mas já
-              além da grade em HTML, CSS, JavaScript e React — os projetos abaixo eu construí por
-              conta própria, fora de aula. Agora estou me aprofundando em segurança da informação
-              e, mais adiante, quero migrar pra dados e nuvem.
-            </p>
-            <p>
-              Antes disso me formei técnico em manutenção de aeronaves (aviônicos) pelo SENAI
-              Palhoça e competi na Aerospace Maintenance Competition 2024, pela equipe da Azul
-              Linhas Aéreas. Trocar de área não foi por falta de rumo — foi escolha, e a atenção a
-              detalhe que aprendi ali eu levo pro código.
-            </p>
-          </div>
-          <img src="/Leonardo-Bruchez.jpg" alt="Foto de Leonardo Bruchez" className="hero-photo" />
+        <p className="hero-tagline">
+          Construindo em React e Node fora de aula, migrando aos poucos pra segurança —{' '}
+          <Link to="/curriculo">a trajetória completa tá no currículo</Link>.
+        </p>
+
+        <div className="hero-panel">
+          <motion.img
+            src="/Leonardo-Bruchez.jpg"
+            alt="Foto de Leonardo Bruchez"
+            className="hero-photo"
+            style={{ y: photoY }}
+          />
+
+          <motion.pre
+            className="hero-snippet"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
+          >
+            <code>
+              <span className="tok-kw">const</span> <span className="tok-var">dev</span> = {'{'}
+              {'\n'}  name: <span className="tok-str">'Leonardo Bruchez'</span>,{'\n'}  base:{' '}
+              <span className="tok-str">'São José, SC'</span>,{'\n'}  stack: [
+              <span className="tok-str">'React'</span>, <span className="tok-str">'Node'</span>,{' '}
+              <span className="tok-str">'security'</span>],{'\n'}  dailyTools: [
+              <span className="tok-str">'VS Code'</span>, <span className="tok-str">'Insomnia'</span>
+              ,{'\n'}    <span className="tok-str">'Claude Code'</span>,{' '}
+              <span className="tok-str">'Responsively.app'</span>
+              ],{'\n'}  openTo: <span className="tok-str">'estágio'</span>,{'\n'}
+              {'}'}
+              <span className="cursor-blink">_</span>
+            </code>
+          </motion.pre>
         </div>
       </section>
 
-      <section className="shell home-projects">
+      <motion.section
+        className="shell home-projects"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-10% 0px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
         <span className="eyebrow">projetos recentes</span>
         <h2>O que andei construindo</h2>
         <div className="project-list">
@@ -39,7 +71,7 @@ export function Home() {
         <p className="see-all">
           <Link to="/projetos">todos os projetos, com mais detalhe →</Link>
         </p>
-      </section>
+      </motion.section>
     </>
   );
 }

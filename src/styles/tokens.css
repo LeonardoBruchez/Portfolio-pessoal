@@ -5,14 +5,14 @@
 }
 
 :root {
-  --paper: #f7f2e9;
-  --paper-raised: #efe8d8;
-  --ink: #1e1b16;
-  --ink-soft: #55503f;
-  --rule: #dad2be;
-  --accent: #b65530;
-  --accent-ink: #fdf6ee;
-  --accent-2: #5f6b3f;
+  --paper: #0d0c0a;
+  --paper-raised: #17130f;
+  --ink: #f3ede2;
+  --ink-soft: #8c8377;
+  --rule: #2a251e;
+  --accent: #ffb454;
+  --accent-ink: #1a0f03;
+  --accent-2: #ff7a45;
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Public Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
@@ -25,20 +25,7 @@
   --space-4: 3rem;
   --space-5: 5rem;
 
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #17140f;
-    --paper-raised: #211c14;
-    --ink: #f1ead9;
-    --ink-soft: #b4ab94;
-    --rule: #39331f;
-    --accent: #e08a56;
-    --accent-ink: #1a1108;
-    --accent-2: #93a46b;
-  }
+  color-scheme: dark;
 }
 
 html {
