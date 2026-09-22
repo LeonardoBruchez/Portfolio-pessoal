@@ -45,7 +45,9 @@ export function Home() {
               {"\n"} base: <span className="tok-str">'São José, SC'</span>,
               {"\n"} stack: [<span className="tok-str">'React'</span>,{" "}
               <span className="tok-str">'Node'</span>,{" "}
-              <span className="tok-str">'security'</span>],{"\n"} dailyTools: [
+              <span className="tok-str">'security'</span>],
+              {"\n"} system: [<span className="tok-str">'Windows'</span>,{" "}
+              <span className="tok-str">'Linux'</span>,{"\n"} dailyTools: [
               <span className="tok-str">'VS Code'</span>,{" "}
               <span className="tok-str">'Insomnia'</span>,{" "}
               <span className="tok-str">'Responsively.app'</span>

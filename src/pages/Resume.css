@@ -116,6 +116,11 @@
   color: var(--accent-2);
 }
 
+.resume-extra-list li {
+  display: list-item;
+  color: var(--ink-soft);
+}
+
 @media (max-width: 700px) {
   .resume-grid {
     grid-template-columns: 1fr;

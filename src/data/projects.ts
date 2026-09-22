@@ -32,7 +32,7 @@ export const projects: Project[] = [
     summary:
       'Recebe um PDF e devolve resumo ou questões de múltipla escolha com dificuldade configurável, usando Gemini — com fallback pra modo mock quando a cota da API acaba.',
     detail: [
-      'Feito em equipe durante o programa Startup Experience. O fluxo é simples — upload de PDF via Multer, extração de texto com pdf-parse-fork, e a geração do material fica a cargo do Gemini, com parâmetros pra tipo de resumo, nível de dificuldade e quantidade de questões. O ponto que vale mencionar: quando a cota da API estoura (o que acontece com frequência no plano gratuito), a API cai pra um modo mock em vez de quebrar o fluxo de teste — decisão que tomamos justamente por causa desse limite.',
+      'Feito em equipe durante o programa Startup Experience, com apoio de IA no código — usamos bastante pra acelerar a integração com a API e o tratamento de erro. O fluxo é simples — upload de PDF via Multer, extração de texto com pdf-parse-fork, e a geração do material fica a cargo do Gemini, com parâmetros pra tipo de resumo, nível de dificuldade e quantidade de questões. O ponto que vale mencionar: quando a cota da API estoura (o que acontece com frequência no plano gratuito), a API cai pra um modo mock em vez de quebrar o fluxo de teste — decisão que tomamos justamente por causa desse limite.',
     ],
     stack: ['React', 'Vite', 'Express', 'Multer', 'pdf-parse-fork', 'Gemini API'],
     repoUrl: 'https://github.com/LeonardoBruchez/StartupProject',
@@ -48,5 +48,18 @@ export const projects: Project[] = [
     ],
     stack: ['Python', 'FastHTML', 'WebSocket', 'MediaPipe', 'scikit-learn', 'OpenCV'],
     repoUrl: 'https://github.com/LeonardoBruchez/computer_vision_app',
+  },
+  {
+    slug: 'nlw-agents',
+    name: 'NLW Agents',
+    status: 'evento Rocketseat (NLW)',
+    summary:
+      'App de salas de pergunta e resposta por voz: grava o áudio, transcreve e busca contexto por embeddings vetoriais antes de responder com o Gemini.',
+    detail: [
+      'Feito durante o NLW (Next Level Week) da Rocketseat, acompanhando a trilha ao vivo do evento. O backend é em Fastify com Drizzle ORM sobre PostgreSQL, usando pgvector pra guardar embeddings dos chunks de áudio e recuperar o contexto relevante antes de chamar o Gemini; o front, em React com TanStack Query e Tailwind, consome essas rotas pra criar salas, gravar perguntas e listar as respostas.',
+    ],
+    stack: ['TypeScript', 'Fastify', 'Drizzle ORM', 'PostgreSQL', 'pgvector', 'React', 'TanStack Query', 'Tailwind CSS', 'Gemini API'],
+    repoUrl: 'https://github.com/LeonardoBruchez/BackEnd-NLW-Agents-Avancado',
+    repoNote: 'frontend em repositório separado: github.com/LeonardoBruchez/FrontEnd-NLW-Agents-avancado',
   },
 ];

@@ -62,13 +62,13 @@ export function ProjectEntry({ project, index, full = false }: Props) {
         </motion.ul>
 
         <p className="project-entry-link">
-          {project.repoUrl ? (
+          {project.repoUrl && (
             <a href={project.repoUrl} target="_blank" rel="noreferrer">
               código no GitHub ↗
             </a>
-          ) : (
-            <span>{project.repoNote}</span>
           )}
+          {project.repoUrl && project.repoNote && ' — '}
+          {project.repoNote && <span>{project.repoNote}</span>}
         </p>
       </div>
     </article>
